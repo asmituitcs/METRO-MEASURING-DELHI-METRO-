@@ -175,21 +175,7 @@ import java.io.*;
 			String psf;
 			int cost;
 
-			/*
-			The compareTo method is defined in Java.lang.Comparable.
-			Here, we override the method because the conventional compareTo method
-			is used to compare strings,integers and other primitive data types. But
-			here in this case, we intend to compare two objects of DijkstraPair class.
-			*/ 
-
-			/*
-			Removing the overriden method gives us this errror:
-			The type Graph_M.DijkstraPair must implement the inherited abstract method Comparable<Graph_M.DijkstraPair>.compareTo(Graph_M.DijkstraPair)
-
-			This is because DijkstraPair is not an abstract class and implements Comparable interface which has an abstract 
-			method compareTo. In order to make our class concrete(a class which provides implementation for all its methods)
-			we have to override the method compareTo
-			 */
+			
 			@Override
 			public int compareTo(DijkstraPair o) 
 			{
@@ -280,14 +266,14 @@ import java.io.*;
 			HashMap<String, Boolean> processed = new HashMap<>();
 			LinkedList<Pair> stack = new LinkedList<>();
 
-			// create a new pair
+			// creating a new pair
 			Pair sp = new Pair();
 			sp.vname = src;
 			sp.psf = src + "  ";
 			sp.min_dis = 0;
 			sp.min_time = 0;
 			
-			// put the new pair in stack
+			// then put the new pair in stack
 			stack.addFirst(sp);
 
 			// while stack is not empty keep on doing the work
@@ -535,16 +521,9 @@ import java.io.*;
 			Create_Metro_Map(g);
 			
 			System.out.println("\n\t\t\t****WELCOME TO THE METRO APP*****");
-			// System.out.println("\t\t\t\t~~LIST OF ACTIONS~~\n\n");
-			// System.out.println("1. LIST ALL THE STATIONS IN THE MAP");
-			// System.out.println("2. SHOW THE METRO MAP");
-			// System.out.println("3. GET SHORTEST DISTANCE FROM A 'SOURCE' STATION TO 'DESTINATION' STATION");
-			// System.out.println("4. GET SHORTEST TIME TO REACH FROM A 'SOURCE' STATION TO 'DESTINATION' STATION");
-			// System.out.println("5. GET SHORTEST PATH (DISTANCE WISE) TO REACH FROM A 'SOURCE' STATION TO 'DESTINATION' STATION");
-			// System.out.println("6. GET SHORTEST PATH (TIME WISE) TO REACH FROM A 'SOURCE' STATION TO 'DESTINATION' STATION");
-			// System.out.print("\nENTER YOUR CHOICE FROM THE ABOVE LIST : ");
+			
 			BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
-			// int choice = Integer.parseInt(inp.readLine());
+			
 			//STARTING SWITCH CASE
 			while(true)
 			{
@@ -691,9 +670,7 @@ import java.io.*;
 						System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 					}
 					break;	
-               	         default:  //If switch expression does not match with any case, 
-                	        	//default statements are executed by the program.
-                            	//No break is needed in the default case
+               	         default:  
                     	        System.out.println("Please enter a valid option! ");
                         	    System.out.println("The options you can choose are from 1 to 6. ");
                             
